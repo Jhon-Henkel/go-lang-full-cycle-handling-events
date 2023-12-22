@@ -32,3 +32,20 @@ func Consume(rabbitChannel *amqp.Channel, output chan<- amqp.Delivery, queue str
 	}
 	return nil
 }
+
+func Publish(rabbitChannel *amqp.Channel, body string, exchangeName string) error {
+	err := rabbitChannel.Publish(
+		exchangeName,
+		"",
+		false,
+		false,
+		amqp.Publishing{
+			ContentType: "text/plain",
+			Body:        []byte(body),
+		},
+	)
+	if err != nil {
+		return err
+	}
+	return nil
+}

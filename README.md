@@ -14,3 +14,5 @@ Para dar oi start no projeto, basta rodar o comando:
 docker-compose up -d
 ```
 Para acessar o Rabbit, acesse: http://localhost:15672/ com o usuário e senha: guest
+
+Fazer um bind no exchange amq.direct com a fila my_queue no rabbit.
