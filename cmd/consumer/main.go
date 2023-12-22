@@ -13,7 +13,7 @@ func main() {
 	}
 	defer rabbitChannel.Close()
 	messagesChannel := make(chan amqp.Delivery)
-	go rabbitmq.Consume(rabbitChannel, messagesChannel)
+	go rabbitmq.Consume(rabbitChannel, messagesChannel, "my_queue")
 	for message := range messagesChannel {
 		fmt.Println(string(message.Body))
 		message.Ack(false)

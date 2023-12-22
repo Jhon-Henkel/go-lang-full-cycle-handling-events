@@ -14,9 +14,9 @@ func OpenChannel() (*amqp.Channel, error) {
 	return rabbitChannel, nil
 }
 
-func Consume(rabbitChannel *amqp.Channel, output chan<- amqp.Delivery) error {
+func Consume(rabbitChannel *amqp.Channel, output chan<- amqp.Delivery, queue string) error {
 	messages, err := rabbitChannel.Consume(
-		"my_queue",
+		queue,
 		"go-consumer",
 		false,
 		false,
