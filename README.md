@@ -1,5 +1,6 @@
 # go-lang-full-cycle-handling-events
-Repositório para armazenar o código do módulo de manipulação de eventos do curso de Go Lang 
+Repositório para armazenar o código do módulo de manipulação de eventos do curso de Go Lang.
+Esse repositório vai ser uma biblioteca para ler e escrever mensagens no RabbitMQ.
 
 # Rodando testes 
 Rodar na raiz do projeto o comando:
